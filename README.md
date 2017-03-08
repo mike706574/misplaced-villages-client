@@ -1,6 +1,8 @@
 # misplaced-villages-client
 
-Describe me!
+A frontend for a [Lost Cities](https://en.wikipedia.org/wiki/Lost_Cities) clone.
+
+Uses [ClojureScript](https://clojurescript.org/) and [re-frame](https://github.com/Day8/re-frame).
 
 ## Copyright and License
 
