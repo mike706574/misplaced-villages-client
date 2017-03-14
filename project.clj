@@ -7,6 +7,8 @@
             :comments "same as Clojure"}
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
+                 [org.clojure/core.async "0.3.441"]
+                 [com.cognitect/transit-cljs "0.8.239"]
                  [com.stuartsierra/component "0.3.2"]
                  [com.taoensso/timbre "4.8.0"]
                  [ring/ring-jetty-adapter "1.5.1"]
@@ -15,7 +17,8 @@
                  [reagent "0.6.0"]
                  [re-frame "0.9.2"]
                  [day8.re-frame/http-fx "0.1.3"]
-                 [cljs-ajax "0.5.8"]]
+                 [cljs-ajax "0.5.8"]
+                 [mike/misplaced-villages "0.0.1-SNAPSHOT"]]
   :plugins [[lein-cljsbuild "1.1.5"]
             [cider/cider-nrepl "0.14.0"]
             [org.clojure/tools.nrepl "0.2.12"]

@@ -1,4 +1,4 @@
-f(ns misplaced-villages-client.server
+(ns misplaced-villages-client.server
   (:gen-class :main true)
   (:require [com.stuartsierra.component :as component]
             [environ.core :refer [env]]
