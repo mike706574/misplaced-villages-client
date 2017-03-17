@@ -1,4 +1,4 @@
-(defproject mike/misplaced-villages-client "0.0.1-SNAPSHOT"
+(defproject org.clojars.mike706574/misplaced-villages-client "0.0.1-SNAPSHOT"
   :description "Describe me!"
   :url "https://github.com/mike706574/misplaced-villages-client"
   :license {:name "Eclipse Public License - v 1.0"
@@ -18,7 +18,7 @@
                  [re-frame "0.9.2"]
                  [day8.re-frame/http-fx "0.1.3"]
                  [cljs-ajax "0.5.8"]
-                 [mike/misplaced-villages "0.0.1-SNAPSHOT"]]
+                 [org.clojars.mike706574/misplaced-villages "0.0.1-SNAPSHOT"]]
   :plugins [[lein-cljsbuild "1.1.5"]
             [cider/cider-nrepl "0.14.0"]
             [org.clojure/tools.nrepl "0.2.12"]
