@@ -108,7 +108,7 @@
             :style {"display" "inline"}}
            [:input {:type "radio"
                     :checked (= source color)
-                    :on-change #(rf/dispatch [:source color])}]
+                    :on-change #(rf/dispatch [:source-change color])}]
            [:span
             {:class (name color)}
             (card/str-card card)]]))

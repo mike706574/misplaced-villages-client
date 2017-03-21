@@ -32,7 +32,7 @@
    (set! (.-onmessage socket) handle-socket-event)
    (.send socket (pr-str {::player/id player
                           ::game/id "1"}))
-   (merge db {:app/status-message "Socket open."})))
+   (assoc db :app/status-message "Socket open.")))
 
 (rf/reg-event-db
  :initialize
@@ -49,14 +49,14 @@
 (rf/reg-event-db
  :connected
  (fn [db [_ message]]
-   (merge db
-          {:app/game (::game/state message)
-           :app/loading? false
-           :app/screen :game
-           :app/card nil
-           :app/destination :expedition
-           :app/source :draw-pile
-           :app/status-message "Connected."})))
+   (assoc db
+     :app/game (::game/state message)
+     :app/loading? false
+     :app/screen :game
+     :app/card nil
+     :app/destination :expedition
+     :app/source :draw-pile
+     :app/status-message "Connected.")))
 
 (rf/reg-event-db
  :player-connected
@@ -67,9 +67,10 @@
  :taken
  (fn [db [_ {player ::player/id
              game ::game/state}]]
-   (merge db {:app/game game
-              :app/move-message nil
-              :app/status-message (str player " took a turn.")})))
+   (assoc db
+     :app/game game
+     :app/move-message nil
+     :app/status-message (str player " took a turn."))))
 
 (rf/reg-event-db
  :too-low
@@ -123,14 +124,16 @@
                          destination source)]
      (println "Sending move:" move)
      (.send socket (pr-str move))
-     (merge db {:app/card nil
-                :app/destination :expedition
-                :app/source :draw-pile})
+     (assoc db
+       :app/card nil
+       :app/destination :expedition
+       :app/source :draw-pile)
      db)))
 
 (rf/reg-event-db
  :error
  (fn [db [_ message]]
    (println (str "Error: " message))
-   (merge db {:app/screen :error
-              :app/error-message message})))
+   (assoc db
+     :app/screen :error
+     :app/error-message message)))
